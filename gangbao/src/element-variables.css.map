@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA;;;;EAIE;AAGF,8BAA8B",
+    "sources": [
+        "element-variables.scss"
+    ],
+    "names": [],
+    "file": "element-variables.css"
+}

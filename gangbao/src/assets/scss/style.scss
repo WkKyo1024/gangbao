@@ -1,0 +1,289 @@
+@import './variables';
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  background-color: map-get($map: $colors, $key: bodycolor);
+}
+
+a {
+  color: #424242
+}
+
+.bg {
+  background: map-get($map: $colors, $key: topbarcolor)
+}
+
+@each $colorKey,
+$color in $colors {
+  .text-#{$colorKey} {
+    color: $color
+  }
+
+  .bg-#{$colorKey} {
+    background-color: $color
+  }
+
+}
+
+// text-align
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var !important;
+  }
+}
+
+
+
+@each $sizeKey,
+$size in $font-sizes {
+  .fs-#{$sizeKey} {
+    font-size: $size * $base-font-size
+  }
+}
+
+// text overflow
+.text-ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// width height
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  width: 100%;
+}
+
+// flex
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex-column {
+  flex-direction: column;
+}
+
+.d-flex-wrap {
+  flex-wrap: wrap;
+}
+
+
+@each $key,
+$value in $flex-jc {
+  .jc-#{$key} {
+    justify-content: $value;
+  }
+}
+
+
+
+@each $key,
+$value in $flex-ai {
+  .ai-#{$key} {
+    align-items: $value;
+  }
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+
+
+@each $typeKey,
+$type in $spacing-types {
+
+  // .m-1
+  @each $sizeKey,
+  $size in $spacing-sizes {
+    .#{$typeKey}-#{$sizeKey} {
+      #{$type}: $size * $spacing-base-size;
+    }
+  }
+
+  // mx-1 my-1
+  @each $sizeKey,
+  $size in $spacing-sizes {
+    .#{$typeKey}x-#{$sizeKey} {
+      #{$type}-left: $size * $spacing-base-size;
+      #{$type}-right: $size * $spacing-base-size;
+    }
+
+    .#{$typeKey}y-#{$sizeKey} {
+      #{$type}-top: $size * $spacing-base-size;
+      #{$type}-bottom: $size * $spacing-base-size;
+    }
+  }
+
+  // .mt-1
+  @each $directionKey,
+  $direction in $spacing-directions {
+
+    @each $sizeKey,
+    $size in $spacing-sizes {
+      .#{$typeKey}#{$directionKey}-#{$sizeKey} {
+        #{$type}-#{$direction}: $size * $spacing-base-size;
+      }
+    }
+  }
+}
+
+// button
+.btn {
+  border: none;
+  border-radius: 0.2857rem;
+  font-size: map-get($map: $font-sizes, $key: 'sm') * $base-font-size;
+  padding: 0.2rem 0.6rem;
+
+  &.btn-lg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      color: map-get($map: $colors, $key: 'primary');
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+
+    background: map-get($map: $colors, $key: 'light-2');
+    border: 1px solid map-get($map: $colors, $key: 'light-3');
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+// nav
+.nav {
+  display: flex;
+
+  .nav-item {
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.2rem;
+
+    &.active {
+      color: map-get($map: $colors, $key: 'primary');
+      border-bottom-color: map-get($map: $colors, $key: 'primary')
+    }
+  }
+
+  &.nav-inverse {
+    .nav-item {
+      color: map-get($map: $colors, $key: 'white');
+
+      &.active {
+        border-bottom-color: map-get($map: $colors, $key: 'white');
+      }
+    }
+  }
+
+}
+
+.sprite {
+  background: url(../image/icon.png) no-repeat 0 0;
+  // background-size: 12.5rem 18.75rem;
+  display: inline-block;
+
+  &.sprite-1 {
+    width: 1.5714rem;
+    height: 1.5rem;
+    background-position: -0.1429rem -0.1429rem;
+  }
+
+  &.sprite-2 {
+    width: 1.7857rem;
+    height: 1.6429rem;
+    background-position: -2.5714rem -0.1429rem;
+  }
+
+  &.sprite-3 {
+    width: 1.5rem;
+    height: 1.5714rem;
+    background-position: 0 60%;
+  }
+
+  &.sprite-4 {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-position: 49.162% 100%;
+  }
+
+  &.sprite-5 {
+    width: 1.5714rem;
+    height: 1.3571rem;
+    background-position: 100% 9.756%;
+  }
+
+  &.sprite-6 {
+    width: 1.5714rem;
+    height: 1.3571rem;
+    background-position: 45.506% 37.398%;
+  }
+
+  &.sprite-7 {
+    width: 1.5714rem;
+    height: 1.4286rem;
+    background-position: 69.101% 9.836%;
+  }
+
+  &.sprite-8 {
+    width: 1.5714rem;
+    height: 1.5rem;
+    background-position: 0 38.017%;
+  }
+
+  &.sprite-9 {
+    width: 1.2857rem;
+    height: 1.5rem;
+    background-position: 50.549% 81.818%;
+  }
+
+  &.sprite-new {
+    width: 2.0714rem;
+    height: 1rem;
+    background-position: 63.158% 35.938%;
+  }
+
+  &.sprite-arrow {
+    width: 1.0714rem;
+    height: 0.6429rem;
+    background-position: 10.811% 94.737%;
+    transform: rotate(-90deg);
+  }
+
+  &.sprite-arrow1 {
+    width: 1.0714rem;
+    height: 0.6429rem;
+    background-position: 10.811% 94.737%;
+    transform: rotate(90deg);
+  }
+}
+
+// borders
+@each $dir in (top, right, bottom, left) {
+  .border-#{$dir} {
+    border-#{$dir}: 1px solid $border-color
+  }
+}
