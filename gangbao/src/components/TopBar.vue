@@ -89,7 +89,7 @@
                   >
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <a href="/exp/hangsource/buy/picksource/list.do">现货商城</a>
+                  <router-link to="/Gbshop">现货商城</router-link>
                 </el-dropdown-item>
                 <el-dropdown-item>
                   <a href="https://bsp.gangbao365.com/bsplatform/shop/index.do"
@@ -141,15 +141,60 @@
         </li>
       </ul>
     </div>
+    <div class="w-1200 d-flex jc-between header-1">
+      <div class="logo">
+        <a title="钢宝网" href="/index.do"></a>
+      </div>
+      <div class="search topheader">
+        <el-input placeholder="请输入您要搜索的关键字" prefix-icon="el-icon-search" v-model="input2">
+          <!-- <template slot="prepend" class=""><i class="sprite sprite-search"></i></template> -->
+          <template slot="append" class="fs-llg">搜索</template>
+          <!-- <template slot="append">搜索</template> -->
+        </el-input>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      input2: ''
+    }
+  },
+  methods: {
+  }
+}
 </script>
 
 <style lang="scss">
-@import "../assets/scss/variables";
+@import "../assets/scss/_variables";
+.header-1{
+  height: 65px;
+  padding: 20px 0;
+  .logo{
+    a{
+      background: url(../assets/image/logo.png);
+      width: 500px;
+      height: 65px;
+      display: inline-block;
+    }
+  }
+  .search.topheader{
+    .el-input{
+      width: 415px;
+    }
+    .el-input-group__append{
+      background-color: map-get($map: $colors, $key: red001);
+      color: #fff;
+      border-radius: 0 10px 10px 0;
+    }
+    // .el-input__inner{
+    //   border-radius: 5%;
+    // }
+  }
+}
 .topbar {
   width: 100%;
   line-height: 40px;
@@ -158,7 +203,7 @@ export default {}
     width: 1200px;
     margin: 0 auto;
     a:link {
-      color: map-get($colors, "l");
+      color: map-get($colors, l);
     }
     a:visited {
       color: map-get($map: $colors, $key: l);
