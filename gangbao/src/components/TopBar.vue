@@ -43,12 +43,25 @@
         <li class="mx-2">|</li>
         <li class="">
           <div id="phoneApp">
-            <a href="#">手机APP</a>
-            <div id="appimg">
+            <el-dropdown>
+              <span class="fs-sm text-l">
+                手机app
+              </span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>
+                  <img
+                    src="https://web.gangbao365.com/webresource/images/gb/anzhuo.png"
+                    alt=""
+                    srcset=""
+                  />
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+            <!-- <div id="appimg">
               <img
                 src="https://web.gangbao365.com/webresource/images/gb/anzhuo.png"
               />
-            </div>
+            </div> -->
           </div>
         </li>
         <li class="mx-2">|</li>
@@ -65,7 +78,43 @@
         <li class="mx-2">|</li>
         <li class="">
           <div id="wzdh">
-            <a class="" href="#">网站导航</a>
+            <el-dropdown>
+              <span class="fs-sm text-l">
+                网站导航
+              </span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>
+                  <a href="https://www.gangbao365.cn" target="_blank"
+                    >钢宝股份</a
+                  >
+                </el-dropdown-item>
+                <el-dropdown-item>
+                  <a href="/exp/hangsource/buy/picksource/list.do">现货商城</a>
+                </el-dropdown-item>
+                <el-dropdown-item>
+                  <a href="https://bsp.gangbao365.com/bsplatform/shop/index.do"
+                    >联营商铺</a
+                  >
+                </el-dropdown-item>
+                <el-dropdown-item>
+                  <a href="http://www.gangbao365.net/index.do" target="_blank"
+                    >钢宝拍卖</a
+                  >
+                </el-dropdown-item>
+                <el-dropdown-item>
+                  <a href="/exp/auction/buy/bout/auction.do">钢材竞价</a>
+                </el-dropdown-item>
+                <el-dropdown-item>
+                  <a href="/exp/tender/buy/bout/auction.do">钢坯竞价</a>
+                </el-dropdown-item>
+                <el-dropdown-item>
+                  <a href="/exp/business/index/index.do">运输招标</a>
+                </el-dropdown-item>
+                <el-dropdown-item>
+                  <a href="http://c2m.gangbao365.com">C2M新智造</a>
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
             <!-- <ul id="wzul">
               <li>
                 <a href="https://www.gangbao365.cn" target="_blank">钢宝股份</a>
@@ -109,7 +158,7 @@ export default {}
     width: 1200px;
     margin: 0 auto;
     a:link {
-      color: map-get($colors,"l");
+      color: map-get($colors, "l");
     }
     a:visited {
       color: map-get($map: $colors, $key: l);
