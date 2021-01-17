@@ -45,7 +45,7 @@
           <div id="phoneApp">
             <el-dropdown>
               <span class="fs-sm text-l">
-                手机app
+                手机APP
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item>
@@ -143,7 +143,7 @@
     </div>
     <div class="w-1200 d-flex jc-between header-1">
       <div class="logo">
-        <a title="钢宝网" href="/index.do"></a>
+        <a title="钢宝网" href="#"></a>
       </div>
       <div class="search topheader">
         <el-input placeholder="请输入您要搜索的关键字" prefix-icon="el-icon-search" v-model="input2">

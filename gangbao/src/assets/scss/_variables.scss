@@ -1,6 +1,6 @@
 // colors
-$colors:("topbarcolor": #d5d5d5, "bodycolor": #fafafa, "hui6": #666666, "hover":#24496b,
-  "red001":#de0000, "red000":#ff0000, "l":#24496b, "h":#06C);
+$colors:("white":#fff, "topbarcolor": #d5d5d5, "bodycolor": #fafafa, "hui6": #666666, "hover":#24496b,
+  "red001":#de0000, "red000":#ff0000, "l":#24496b, "h":#06C, "footbg": #858585);
 
 $border-color: map-get($map: $colors, $key:'light-1');
 // font-size
