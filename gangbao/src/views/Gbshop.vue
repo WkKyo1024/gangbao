@@ -1,18 +1,15 @@
 <template>
-  <div class="Gbshop">
-    <top-bar></top-bar>
-    <foot-bg></foot-bg>
+  <div class="Gbshop" @click="add3">
+    gbshop 点击触发父路由的方法
   </div>
 </template>
 <script>
-import TopBar from '../components/TopBar.vue'
-import FootBg from '../components/FootBg.vue'
 export default {
-  name: 'Home',
-  components: {
-    // HelloWorld,
-    TopBar,
-    FootBg
+  name: 'Gbshop',
+  methods: {
+    add3 () {
+      this.$parent.addShop()
+    }
   }
 }
 </script>

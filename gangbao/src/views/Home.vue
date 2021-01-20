@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <top-bar></top-bar>
+    <top-bar :shopNumber='shopNumber'></top-bar>
+    Home
+    <router-view></router-view>
     <foot-bg></foot-bg>
   </div>
 </template>
@@ -11,14 +13,24 @@ import FootBg from '../components/FootBg'
 export default {
   name: 'Home',
   components: {
-    // HelloWorld,
     TopBar,
     FootBg
+  },
+  data () {
+    return {
+      shopNumber: 1
+    }
+  },
+  methods: {
+    addShop () {
+      this.shopNumber += 3
+    }
   }
+
 }
 </script>
 <style lang="scss">
-  .home{
-    height: 1000px;
-  }
+  // .home{
+  //   height: 1000px;
+  // }
 </style>

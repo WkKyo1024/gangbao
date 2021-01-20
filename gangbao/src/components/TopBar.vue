@@ -1,11 +1,10 @@
 <template>
-  <div class="bg topbar fs-sm">
-    <div class="w-1200 d-flex jc-between">
+  <div class="topbar fs-sm">
+    <div class="bg">
+      <div class="w-1200 d-flex jc-between header-0">
       <ul class="d-flex">
         <li>
-          <a href="/newIndex.do" class="d-flex ai-center"
-            ><i class="sprite sprite-1 mr-1"></i><span>钢宝首页</span></a
-          >
+          <router-link to="/Main" class="d-flex ai-center"><i class="sprite sprite-1 mr-1"></i><span>钢宝首页</span></router-link>
         </li>
         <li class="mx-2 text-hui6">金陵钢宝网欢迎你！</li>
         <li class="">
@@ -31,7 +30,7 @@
       <ul class="d-flex">
         <li class="">
           <a href="/exp/hangsource/buy/shopping/list.do"
-            >购物车（<span id="indexGwcNum" class="text-red001">0</span>）</a
+            >购物车（<span id="indexGwcNum" class="text-red001">{{shopNumber}}</span>）</a
           >
         </li>
         <li class="mx-2">|</li>
@@ -140,13 +139,18 @@
           </div>
         </li>
       </ul>
+      </div>
     </div>
     <div class="w-1200 d-flex jc-between header-1">
       <div class="logo">
         <a title="钢宝网" href="#"></a>
       </div>
-      <div class="search topheader">
-        <el-input placeholder="请输入您要搜索的关键字" prefix-icon="el-icon-search" v-model="input2">
+      <div class="search topheader d-flex ai-center">
+        <el-input
+          placeholder="请输入您要搜索的关键字"
+          prefix-icon="el-icon-search"
+          v-model="input2"
+        >
           <!-- <template slot="prepend" class=""><i class="sprite sprite-search"></i></template> -->
           <template slot="append" class="fs-llg">搜索</template>
           <!-- <template slot="append">搜索</template> -->
@@ -158,47 +162,49 @@
 
 <script>
 export default {
+  props: ['shopNumber'],
   data () {
     return {
       input2: ''
     }
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 
 <style lang="scss">
 @import "../assets/scss/_variables";
-.header-1{
-  height: 65px;
-  padding: 20px 0;
-  .logo{
-    a{
-      background: url(../assets/image/logo.png);
-      width: 500px;
-      height: 65px;
-      display: inline-block;
-    }
-  }
-  .search.topheader{
-    .el-input{
-      width: 415px;
-    }
-    .el-input-group__append{
-      background-color: map-get($map: $colors, $key: red001);
-      color: #fff;
-      border-radius: 0 10px 10px 0;
-    }
-    // .el-input__inner{
-    //   border-radius: 5%;
-    // }
-  }
-}
 .topbar {
+  .header-1 {
+    padding: 20px 0;
+    .logo {
+      a {
+        background: url(../assets/image/logo.png);
+        width: 500px;
+        height: 65px;
+        display: block;
+        box-sizing: border-box;
+      }
+    }
+    .search.topheader {
+      .el-input {
+        width: 415px;
+      }
+      .el-input-group__append {
+        background-color: map-get($map: $colors, $key: red001);
+        color: #fff;
+        border-radius: 0 10px 10px 0;
+      }
+      // .el-input__inner{
+      //   border-radius: 5%;
+      // }
+    }
+  }
   width: 100%;
   line-height: 40px;
-  height: 40px;
+  .header-0{
+    height: 40px;
+  }
   .w-1200 {
     width: 1200px;
     margin: 0 auto;
